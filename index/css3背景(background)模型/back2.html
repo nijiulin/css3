@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>noTitle</title>
+		<meta charset="">
+		<link rel="stylesheet" href="">
+		<script>
+		   window.onload=function  () {
+		     var div=document.getElementsByTagName("div")[0];
+             var positionArr=(getStyle(div,"backgroundPosition")).split(",");
+             var num=0;
+			 setInterval(function(){
+			      if(num==positionArr.length){
+				    num=0;
+				  }
+			      for (var i=0; i<positionArr.length; i++) {
+				    if(i==num){
+					  positionArr[i]="0 0";
+					}else{
+					  positionArr[i]="-500px -500px";
+					}
+			      }
+                 div.style.backgroundPosition=positionArr.join(",");
+				 num++
+			 },2000)
+		   }
+
+		   function getStyle (obj,attr) {
+              if(window.getComputedStyle){
+			    return getComputedStyle(obj,null)[attr];
+			  }else{
+			    return obj.currentStyle[attr];
+			  }
+		   }
+		</script>
+		<style>
+		  div{
+		    width:300px;height:400px;
+			background-image:url(4.jpg),url(5.jpg),url(6.jpg);
+			background-repeat:no-repeat;
+			background-size:100% 100%,100% 100%,100% 100%;
+			background-position:0px 0px,-500px -500px,-500px -500px;
+		  }
+		</style>
+	</head>
+	<body>
+		<div>
+		</div>
+	</body>
+</html>

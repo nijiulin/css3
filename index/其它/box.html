@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            width: 200px;
+            border: 1px solid blue;
+            padding: 20px;
+
+
+            -webkit-box-sizing:border-box;
+            /*margin和padding都算在200内;*/
+
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var odiv = document.getElementsByTagName("div")[0];
+            alert(odiv.offsetWidth);
+        }
+    </script>
+</head>
+<body>
+<div></div>
+</body>
+</html>
